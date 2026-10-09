@@ -1,59 +1,74 @@
-# ProyectoIntegrador
+# Proyecto Integrador - Web 1 | Sistema de Gestión de Eventos y Reservas
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.37.
+Este repositorio contiene la aplicación web para la gestión simulada de eventos y reservas de la **UCEVA**, desarrollada con **Angular 18** y **Bootstrap 5**. Corresponde al entregable del Primer Hito del proyecto.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Tecnologías Utilizadas
 
-```bash
-ng serve
-```
+- **Framework:** Angular 18+ (Standalone Components)
+- **Lenguaje:** TypeScript
+- **Estilos:** Bootstrap 5 & Sass (SCSS)
+- **Enrutamiento:** Angular Router
+- **Gestión de Datos:** RxJS & Mock Data Service
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 📁 Estructura del Proyecto
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+```text
+src/
+├── app/
+│   ├── components/
+│   │   ├── event-card/       # Tarjeta reutilizable de eventos
+│   │   └── navbar/           # Barra de navegación persistente
+│   ├── interfaces/
+│   │   ├── event.interface.ts        # Modelo de Evento
+│   │   └── reservation.interface.ts  # Modelo de Reserva
+│   ├── pages/
+│   │   ├── admin/                # Panel de administración
+│   │   ├── agent-reservations/   # Gestión de reservas por agente
+│   │   ├── client-events/        # Catálogo de eventos para cliente
+│   │   └── client-reservations/  # Reservas realizadas por el cliente
+│   ├── services/
+│   │   └── mock-data.service.ts  # Servicio con datos simulados
+│   ├── app.html                  # Plantilla raíz con navbar y router-outlet
+│   ├── app.ts                    # Componente raíz de la aplicación
+│   └── app.routes.ts             # Configuración global de rutas
 
-```bash
-ng generate component component-name
-```
+🗺️ Rutas DisponiblesRutaVistaDescripción
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+/client/eventsEventos (Cliente) Muestra la lista de eventos disponibles para reserva.
 
-```bash
-ng generate --help
-```
+/client/reservations Mis Reservas  Lista de reservas asociadas al cliente.
 
-## Building
+/agent/reservations Módulo Agente  Vista para agentes encargados de gestionar reservas.
 
-To build the project run:
+/admin/  Administración  Panel principal de administración global del sistema
 
-```bash
-ng build
-```
+⚙️ Instalación y Ejecución
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Pre-requisitos:
+ - Node.js: v18.x o superior
+ - Angular CLI: v18.x o superior (npm i -g @angular/cli)
+ 
+ Pasos para ejecutar localmente
+ 
+ 1. Clonar el repositorio:
+ git clone https://github.com/nicolasmillan01/Proyecto.git
+cd Uceva-Angular-Proyecto-Integrador-Web-1
 
-## Running unit tests
+ 2. Instalar dependencias:
+ npm install
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+ 3. Iniciar el servidor de desarrollo:
+ npm start
 
-```bash
-ng test
-```
+Acceder a la aplicación:
+Abre tu navegador e ingresa a http://localhost:4200/.
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+📝 Estándar de Commits:
+El proyecto sigue la convención de Conventional Commits:
+feat: Nuevas funcionalidades.
+fix: Corrección de errores o bugs.
+style: Cambios visuales o formateo sin afectar lógica.docs: Cambios en la documentación.
