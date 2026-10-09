@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MockDataService } from '../../services/mock-data.service';
 
 @Component({
-  selector: 'app-admin.page',
-  imports: [NavbarComponent],
+  selector: 'app-admin',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './admin.page.html',
-  styleUrl: './admin.page.scss',
+  styleUrls: ['./admin.page.scss']
 })
 export class AdminPage {
-
+  private mockService = inject(MockDataService);
+  events = this.mockService.getEvents();
+  reservations = this.mockService.getReservations();
 }

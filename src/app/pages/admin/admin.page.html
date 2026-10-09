@@ -1,3 +1,48 @@
-<app-navbar />
+<div class="container my-4">
+  <h2 class="mb-4">Panel de Administración y Reportes</h2>
+  
+  <div class="row text-center mb-4">
+    <div class="col-md-4 mb-3">
+      <div class="card bg-primary text-white p-3 shadow-sm">
+        <h3>{{ events.length }}</h3>
+        <p class="m-0">Total Eventos Registrados</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card bg-success text-white p-3 shadow-sm">
+        <h3>{{ reservations.length }}</h3>
+        <p class="m-0">Total Reservas Solicitadas</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card bg-info text-white p-3 shadow-sm">
+        <h3>100%</h3>
+        <p class="m-0">Módulos Activos</p>
+      </div>
+    </div>
+  </div>
 
-<p>admin.page works!</p>
+  <h4 class="mb-3">Reporte General de Reservas</h4>
+  <div class="table-responsive">
+    <table class="table table-hover table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>ID Reserva</th>
+          <th>ID Evento</th>
+          <th>ID Cliente</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (res of reservations; track res.id) {
+          <tr>
+            <td>{{ res.id }}</td>
+            <td>{{ res.eventId }}</td>
+            <td>{{ res.clientId }}</td>
+            <td><span class="badge bg-secondary">{{ res.status }}</span></td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
