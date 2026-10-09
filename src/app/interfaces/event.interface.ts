@@ -1,4 +1,5 @@
 export interface Event {
+    id: number;
     codigo: number;
     nombre: string;
     descripcion: string;

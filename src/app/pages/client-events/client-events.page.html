@@ -5,9 +5,9 @@
       <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title text-primary">{{ event.name }}</h5>
-            <p class="card-text"><strong>Fecha:</strong> {{ event.date }}</p>
-            <p class="card-text"><strong>Lugar:</strong> {{ event.location }}</p>
+            <h5 class="card-title text-primary">{{ event.nombre }}</h5>
+            <p class="card-text"><strong>Fecha:</strong> {{ event.fecha_inicio | date:'shortDate' }}</p>
+            <p class="card-text"><strong>Lugar:</strong> {{ event.teatro }} ({{ event.ciudad }})</p>
             <button class="btn btn-primary w-100" (click)="reservar(event.id)">Reservar Evento</button>
           </div>
         </div>

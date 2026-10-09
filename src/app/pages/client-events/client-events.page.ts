@@ -14,6 +14,6 @@ export class ClientEventsPage {
   events = this.mockService.getEvents();
 
   reservar(eventId: number) {
-    alert(Reserva realizada exitosamente (Simulada) para el evento #${eventId});
+    alert(`Reserva realizada exitosamente (Simulada) para el evento #${eventId}`);
   }
 }
